@@ -16,30 +16,30 @@ void imprimeLista(NODE *inicio);
 NODE* inserirProx(NODE *inicio, int valor) {
 	NODE *aux = inicio;
 
-  if(aux->prox == NULL) {
+	if(aux->prox == NULL) {
     
-  NODE *novo = (NODE *)malloc(sizeof(NODE));
-	novo->valor = valor;
-	novo->prox = NULL;
-	aux->prox = novo;
+  		NODE *novo = (NODE *)malloc(sizeof(NODE));
+		novo->valor = valor;
+		novo->prox = NULL;
+		aux->prox = novo;
     
-  return novo;
+  		return novo;
     
 	}else{
     
-    inserirProx(aux->prox, valor);    
-  }
+    	inserirProx(aux->prox, valor);    
+  	}
+  
   return aux;
-
 }
 
 void imprimeLista(NODE *inicio) {
 	NODE *aux = inicio;
   
-  if(aux != NULL){
+	if(aux != NULL){
 		printf("[ %d ] -> ", aux->valor);
 		aux = aux->prox;
-    imprimeLista(aux); 
+    	imprimeLista(aux); 
 	}
 
 }
